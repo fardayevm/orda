@@ -1,0 +1,61 @@
+.orda-futuristic-footer {
+    background: linear-gradient(160deg, #0a0a0a 60%, #111);
+    padding: 50px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.branding h1 {
+    color: #E9AFA3;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.footer-links a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #E9AFA3;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.footer-links a:hover {
+    color: #E9AFA3;
+}
+
+.footer-links a:hover:before {
+    width: 100%;
+}
+
+.copyright p {
+    color: #888;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .orda-futuristic-footer {
+        text-align: center;
+    }
+    .branding, .footer-links, .copyright {
+        margin-top: 20px;
+        width: 100%;
+    }
+}

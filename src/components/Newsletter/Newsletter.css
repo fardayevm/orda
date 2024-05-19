@@ -1,0 +1,81 @@
+.newsletter-section {
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../../assets/Embroidery.jpeg");
+    background-size: cover;
+    padding: 2rem 0;
+    margin: 0px;
+    margin-bottom: 0px;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;  
+}
+
+.newsletter-box {
+    display:flex;
+    flex-direction: column;
+    background-color: #fff; /* Semi-transparent white */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%; /* Adjust as required */
+    max-width: 500px;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+.newsletter-box h2 {
+    margin-bottom: 0.1rem;
+    font-weight: bold;
+}
+
+.newsletter-box p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #333; /* Adjust color as required */
+}
+
+.newsletter-box button {
+    position: relative;
+    overflow: hidden;
+    background-color: #333; /* Adjust color as required */
+    color: #fff;
+    padding: 0.5rem 1.4rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This will help in centering the elements */
+}
+
+.button-text, .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.arrow {
+    transform: translateX(42%); /* Start the arrow from the middle */
+    opacity: 0;  /* Hide the arrow initially */
+    margin-left: -0.5rem; /* Adjust to control the initial spacing between the text and arrow */
+}
+
+.newsletter-box button:hover {
+    background-color: #5724ae;
+}
+
+.newsletter-box button:hover .button-text {
+    transform: translateX(-0.5rem); /* Move the text slightly to the left on hover */
+}
+
+.newsletter-box button:hover .arrow {
+    transform: translateX(0.5rem); /* Let the arrow move to its natural position on hover */
+    opacity: 1; /* Show the arrow on hover */
+}
+
+
+
+

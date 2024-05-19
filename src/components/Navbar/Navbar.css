@@ -1,0 +1,298 @@
+.advanced-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: rgb(27, 27, 27); /* Change text color to white */
+    position: relative;
+}
+
+.advanced-navbar:hover {
+    background-color: #fff; /* Whitish background with 30% opacity */
+}
+
+
+.navbar-links,
+.navbar-icons,
+.icon-container,
+.navbar-search {
+    position: relative;
+    z-index: 2; /* Ensure these elements are above the overlay */
+}
+
+.navbar-links, .navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-size: 16px;
+}
+
+.navbar-links li {
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+    list-style-type: none;
+}
+
+.navbar-links li::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: black; /* Adjust color as needed */
+    transition: all 0.3s;
+}
+
+.navbar-links li:hover {
+    transform: scale(1.05);
+    color: #888;
+}
+
+.navbar-links li:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.navbar-links li span,
+.icon-container {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.navbar-links li:hover span,
+.icon-item:hover i {
+    transform: translateY(-5px); /* Lifts the link text upwards by 5 pixels */
+}
+
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    z-index: 3;
+}
+
+.icon-container {
+    display: flex;
+    gap: 30px; /* Adjust space between icon items */
+}
+
+.icon-item {
+    position: relative;
+    display: inline-block;
+    cursor: pointer; /* Indicates an interactive element */
+}
+
+.icon-item i {
+    font-size: 20px;
+}
+
+.icon-text {
+    position: absolute;
+    font-size: 13px;
+    white-space: nowrap; /* Prevents text from wrapping */
+    opacity: 0; /* Hides the text initially */
+    pointer-events: none; /* Ensures text isn't interactable when hidden */
+    top: 100%; /* Aligns text just below the icon */
+    left: 50%; /* Centers the text horizontally */
+    transform: translateX(-50%); /* Further centers the text */
+    transition: opacity 0.3s; /* Smooth transition for fade-in effect */
+}
+
+.icon-item:hover .icon-text {
+    opacity: 1; /* Shows the text when icon is hovered */
+}
+
+.advanced-navbar.dark-theme {
+    background-color: rgb(0, 0, 0); /* Darker background */
+    color: white; /* White text */
+}
+
+.advanced-navbar.dark-theme .navbar-links li,
+.advanced-navbar.dark-theme .navbar-brand,
+.advanced-navbar.dark-theme .icon-container i,
+.advanced-navbar.dark-theme .icon-container span,
+.advanced-navbar.dark-theme .menu-icon   {
+    color: rgb(243, 243, 243); /* White text and icons */
+}
+
+.advanced-navbar.dark-theme:hover .navbar-links li,
+.advanced-navbar.dark-theme:hover .navbar-brand,
+.advanced-navbar.dark-theme:hover .icon-container i,
+.advanced-navbar.dark-theme:hover .icon-container span,
+.advanced-navbar.dark-theme:hover .menu-icon  {
+    color: rgb(243, 243, 243); /* Dark gray color */
+}
+
+/* Ensure links and icons maintain white color on hover */
+.advanced-navbar.dark-theme .navbar-links li:hover,
+.advanced-navbar.dark-theme .icon-item:hover i,
+.advanced-navbar.dark-theme:hover .menu-icon  {
+    color: #ddd; /* Slightly lighter color on hover */
+}
+
+
+.search-input {
+    opacity: 0;
+    width: 0;
+    transition: opacity 0.3s, width 0.3s;
+    border: none;
+    background: transparent;
+    color: #000; /* Adjust as needed */
+    outline: none; /* Remove the default outline */
+    padding-left: 10px; /* Space between icon and text input */
+}
+
+.search-icon-item:hover .icon-text,
+.search-icon-item:focus-within .icon-text {
+    opacity: 1;
+}
+
+.search-icon-item:focus-within .search-input {
+    opacity: 1;
+    width: 150px; /* Adjust based on desired size */
+}
+
+.icon-item:focus-within .icon-text {
+    opacity: 0;
+}
+
+
+.advanced-navbar:hover .navbar-links li,
+.advanced-navbar:hover .navbar-brand,
+.advanced-navbar:hover .icon-container i,
+.advanced-navbar:hover .icon-container span,
+.advanced-navbar:hover .menu-icon {
+    color: rgba(0, 0, 0, 0.7); /* Dark gray color */
+}
+
+.advanced-navbar,
+.advanced-navbar .navbar-links li,
+.advanced-navbar .navbar-brand,
+.advanced-navbar .icon-container i,
+.advanced-navbar .icon-container span,
+.advanced-navbar .menu-icon  {
+    transition: all 0.3s ease; /* Adjust the timing (0.3s) if necessary */
+}
+
+.customLink {
+    color: inherit; /* or any specific color you prefer */
+    text-decoration: none;
+}
+
+.customLink:hover,
+.customLink:active,
+.customLink:visited {
+    color: inherit; /* or the same specific color you used above */
+    text-decoration: none;
+}
+
+.menu-icon {
+    display: none; /* Hide by default */
+}
+
+.cart-item-count {
+    position: absolute;
+    top: -10px; /* Adjust as needed */
+    right: -10px; /* Adjust as needed */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.advanced-navbar.dark-theme .cart-item-count {
+    background-color: red; /* Example: Bright color for visibility against dark background */
+    color: white; /* Text color */
+    border: 1px solid #fff; /* Optional: border to make it stand out */
+    /* Any additional styling specific to the dark theme goes here */
+}
+
+
+
+@media screen and (max-width: 928px) {
+    .advanced-navbar {
+        justify-content: flex-start; /* Align items to start for mobile view */
+        padding: 2rem; /* Adjust the padding for mobile */
+    }
+
+    .menu-icon {
+        display: block; /* Show the menu icon on mobile */
+        position: absolute;
+        left: 1.5rem; /* Place on the left */
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px; /* Adjust icon size */
+        cursor: pointer;
+        z-index: 5; /* Ensure it's above other content */
+    }
+
+
+    .navbar-brand {
+        position: absolute;
+        left: 50%; /* Center the brand */
+        transform: translateX(-50%);
+        z-index: 3; /* Ensure it's above the menu icon */
+    }
+
+    .navbar-links {
+        display: none; /* Initially hide the navbar links */
+        position: absolute;
+        top: 80%; /* Place it below the navbar */
+        left: -1.5rem;
+        width: 300px;
+        height: 100vh;
+        background-color: rgb(243, 243, 243); /* Adjust background color as needed */
+        flex-direction: column;
+        align-items: center; /* Center the items */
+        z-index: 2; /* Ensure it's below the navbar brand */
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+
+    .navbar-links.isNavOpen {
+        display: flex; /* Display links when menu icon is clicked */
+    }
+
+    .navbar-links li:hover::before {
+        width: 0;
+        left: 0;
+    }
+
+    .navbar-links li {
+        width: 100%; /* Full width for each link */
+        padding: 15px; /* Adjust padding for tap targets */
+        border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator between links */
+        text-align: center; /* Center the text */
+    }
+
+    .navbar-icons {
+        display: flex; /* Ensure icons are displayed */
+        position: absolute;
+        right: 1rem; /* Position icons on the right */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4; /* Ensure icons are above the menu icon and links */
+    }
+
+    .icon-item {
+        color: white; /* Adjust color as needed */
+        font-size: 20px; /* Adjust the size of the icons */
+        cursor: pointer;
+    }
+
+    .advanced-navbar.dark-theme .navbar-links li {
+        color: rgb(20, 20, 20); /* Dark gray color */
+    }
+    /* Additional specific styles for mobile view can be added here */
+    .advanced-navbar.dark-theme:hover .navbar-links li {
+        color: rgb(20, 20, 20); /* Dark gray color */
+    }
+    
+}

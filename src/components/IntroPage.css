@@ -1,0 +1,91 @@
+.intro-container {
+    width: 100vw;
+    height: 100vh; /* Cover the full viewport height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Optional: add object-fit to cover the entire container area */
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust color and opacity as needed */
+    z-index: 1; /* Ensure this is above the video but below the text/content */
+    overflow: hidden;
+}
+
+.advanced-navbar {
+    position: relative; /* If not already positioned */
+    z-index: 10; /* Value greater than the dark rectangle's z-index */
+}
+
+.intro-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.35);  /* Black color with 15% opacity */
+    z-index: 1;  /* To make sure the overlay is below the text and other content */
+}
+
+.intro-container .advanced-navbar {
+    align-self: stretch;  /* This allows the navbar to stretch within the flex container */
+    height: 80px; /* You can adjust this to your preference */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem; /* Add some horizontal padding */
+    transition: height 0.3s ease; /* For a smooth height transition */
+}
+
+.intro-container h1 {
+    position:absolute;
+}
+
+.intro-heading {
+    margin-top: 20%; /* Adjust as needed to place the text at the desired position */
+    color: white; /* Adjust color to make it visible on the background */
+    font-size: 3rem; /* Adjust font size as required */
+    z-index: 2; /* To ensure it's above the background */
+}
+
+
+.shop-now-btn {
+    font-size: 1rem;
+    padding: 15px 30px; 
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    background-color: #fff; /* Black background */
+    color: #444; /* White text */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* For smooth hover effects */
+    z-index:4;
+}
+
+/* Hover effects for the button */
+.shop-now-btn:hover {
+    transform: translateY(-5px); 
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Adds a slight shadow */
+}
+
+

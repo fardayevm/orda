@@ -1,0 +1,64 @@
+.product-detail-container {
+    display: flex;
+    padding: 20px;
+    align-items: start; /* Align children at the top */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.image-gallery {
+    flex: 1; /* Take up remaining width */
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+}
+
+.product-info {
+    flex: 1; /* Equal width to .image-gallery */
+    position: sticky; /* This is the key to the sticky effect */
+    top: 0; /* Stick to the top of its container */
+    padding: 20px;
+    background-color: white; /* Ensure it covers content behind when scrolling */
+}
+
+.image-gallery img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+
+.product-info h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.product-info p {
+    color: #777;
+    line-height: 1.5;
+}
+
+.product-info h2 {
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .image-gallery {
+        flex: 1;
+        margin-right: 2rem;
+    }
+
+    .product-info {
+        flex: 1;
+        padding-top: 0;
+        gap: 2rem;
+    }
+}

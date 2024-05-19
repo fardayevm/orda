@@ -1,0 +1,139 @@
+.product-info {
+    flex: 1;
+    padding: 20px;
+    
+}
+
+.product-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info button {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background-color: #000000;
+    color: white;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;  
+}
+
+.reference, .color, .size, .size-selection {
+    margin: 5px 0;
+}
+
+.price {
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+.size-section {
+    margin-top: 20px;
+}
+
+.size-section h2 {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.size-section-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.size-options {
+    display: flex;
+    gap: 10px;
+}
+
+.size-option {
+    background-color: #000; /* Dark background */
+    color: white; /* White text */
+    border: 2px solid transparent; /* Transparent border to maintain the button size */
+    padding: 10px 20px; /* Or any other padding you prefer */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+    outline: none; /* Removes the outline to improve aesthetics */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition for background, text color and border */
+    /* Add more styling as needed, such as font-size, border-radius, etc. */
+}
+.size-option:hover {
+    background-color: #0056b3;
+}
+
+.size-option.selected {
+    background-color: #e6e6e6; /* Grey background for selected state */
+    color: #000; /* Black text for selected state */
+    border: 2px solid #000; /* Black border for selected state */
+    /* Add any other styles for the selected state if needed */
+}
+
+.product-detail-buttons {
+    display: flex; /* make the container a flexbox */
+    gap: 10px; /* space between buttons */
+}
+
+.add-to-bag, .wishlist {
+    flex: 1; /* make the buttons take up equal space */
+    padding: 10px 20px; /* button padding */
+    border: none; /* remove default borders */
+    cursor: pointer; /* hand cursor for clickable items */
+    transition: background-color 0.3s, transform 0.3s; /* smooth transition for hover effects */
+    font-size: 16px; /* adjust as needed */
+    border-radius: 5px; /* round corners for buttons */
+    background-color: #333; /* dark background */
+    color: #fff; /* white text */
+    outline: none; /* remove default focus outline */
+    text-align: center; /* center text */
+}
+
+
+/* Differentiate the add-to-bag button from the wishlist button */
+.add-to-bag {
+    margin-top: 10%;
+    /*background-color: #007BFF; /* blue color, adjust as needed */
+}
+
+.add-to-bag:hover {
+    background-color: #0056b3; /* darker blue on hover */
+}
+
+
+.collapsibles {
+    margin-top: 20%;
+}
+
+.collapsible-section h3 {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.collapsible-section p {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer-options p {
+    margin-top: 20px;
+    cursor: pointer;
+    color: #777;
+}
+
+.size-option.size-not-selected {
+    border: 2px solid red; /* Red border to indicate selection is required */
+}
+
+.size-warning {
+    color: red;
+    margin-left: 5px;
+}
